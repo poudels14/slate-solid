@@ -1,0 +1,57 @@
+{
+  "name": "slate-solid",
+  "description": "A solid-js wrapper for slate rich text editor",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/",
+  "files": [
+    "dist/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./renderers/*": {
+      "import": "./dist/renderers/*.jsx"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf build",
+    "examples:watch": "rollup -c examples/rollup.config.js -w",
+    "fix": "prettier -w .",
+    "serve": "serve build/examples",
+    "start": "npm-run-all --parallel serve examples:watch"
+  },
+  "dependencies": {
+    "array-equal": "^1.0.0",
+    "direction": "^2.0.0",
+    "immer": "^9.0.6",
+    "is-hotkey": "^0.2.0",
+    "prismjs": "^1.25.0",
+    "scroll-into-view-if-needed": "^2.2.28",
+    "slate": "^0.66.5",
+    "solid-js": "^1.1.6",
+    "solid-store": "github:poudels14/solid-store#release",
+    "twind": "^0.16.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-html": "^0.2.4",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@types/is-hotkey": "^0.1.5",
+    "@types/lodash": "^4.14.176",
+    "@types/prismjs": "^1.16.6",
+    "babel-preset-solid": "^1.1.7",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.0",
+    "serve": "^12.0.1",
+    "typescript": "^4.4.4"
+  }
+}
